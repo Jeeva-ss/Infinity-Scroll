@@ -1,0 +1,25 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+.container {
+	max-width: 1024px;
+	margin: 2rem auto;
+	text-align: center;
+}
+
+h1 {
+	font-size: 4.6rem;
+	letter-spacing: 1px;
+	font-weight: 700;
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+	color: #252525;
+}
