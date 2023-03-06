@@ -19,15 +19,15 @@ function displayPhotos() {
     // 'a' tag
     const item = document.createElement("a");
     setAttributes(item, {
-      href: "photo.links.html",
-      target: "_blank",
+      href: photo.links.html,
+      target: _blank,
     });
     // 'img' tag
     const img = document.createElement("img");
     setAttributes(img, {
-      src: "photo.urls.regular",
-      alt: "photo.alt_description",
-      title: "photo.alt_description",
+      src: photo.urls.regular,
+      alt: photo.alt_description,
+      title: photo.alt_description,
     });
     // nesting images inside anchor tag
     item.appendChild(img);
