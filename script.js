@@ -1,12 +1,22 @@
 const imageContainer = document.getElementById("image-container");
 const loader = document.getElementById("loader");
 
+let ready = false;
+let totalImages = 0;
+let imagesLoaded = 0;
 let photosArray = [];
 const count = 30;
 
-const apiKey1 = "Xlb5NbESEpRlrNYH8YksLvlQ4e98fPc-o4ack27frPU";
-const apiKey2 = "IH4MT-M7KA2QhjAGz9hzc6HufNP0KajW7H1_oVLQ980";
-const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey1 ? apiKey1 : apiKey2}&count=${count}&query=${"nature"}&orientation=${"portrait"}`;
+const apiKey = "L_o6kXmKGlReJ6txXZYJ8vLxaF73lP6KJMtCtBXPfFg";
+const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}&query=${"nature"}&orientation=${"portrait"}`;
+
+function imageLoaded() {
+  imagesLoaded++;
+  if (imagesLoaded === totalImages) {
+    ready = true;
+    loader.hidden = true;
+  }
+}
 
 function setAttributes(element, attributes) {
   for (const key in attributes) {
@@ -15,6 +25,8 @@ function setAttributes(element, attributes) {
 }
 
 function displayPhotos() {
+  imagesLoaded = 0;
+  totalImages = photosArray.length;
   photosArray.forEach((photo) => {
     // 'a' tag
     const item = document.createElement("a");
@@ -29,6 +41,7 @@ function displayPhotos() {
       alt: photo.alt_description,
       title: photo.alt_description,
     });
+    img.addEventListener('load', imageLoaded);
     // nesting images inside anchor tag
     item.appendChild(img);
     // nesting anchor tag inside container
@@ -45,6 +58,13 @@ const getPhotos = async () => {
     imageContainer.innerHTML = `<h1>Comeback later...</h1>`;
   }
 };
+
+window.addEventListener('scroll', () => {
+  if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000 && ready) {
+    ready = false;
+    getPhotos();
+  }
+})
 
 // On Load
 getPhotos();
