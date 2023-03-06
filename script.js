@@ -2,7 +2,7 @@ const imageContainer = document.getElementById("image-container");
 const loader = document.getElementById("loader");
 
 let photosArray = [];
-const count = 10;
+const count = 30;
 
 const apiKey = "Xlb5NbESEpRlrNYH8YksLvlQ4e98fPc-o4ack27frPU";
 const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}&query=${"nature"}&orientation=${"portrait"}`;
