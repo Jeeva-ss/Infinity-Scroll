@@ -20,7 +20,7 @@ function displayPhotos() {
     const item = document.createElement("a");
     setAttributes(item, {
       href: photo.links.html,
-      target: _blank,
+      target: '_blank',
     });
     // 'img' tag
     const img = document.createElement("img");
