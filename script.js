@@ -4,8 +4,9 @@ const loader = document.getElementById("loader");
 let photosArray = [];
 const count = 30;
 
-const apiKey = "Xlb5NbESEpRlrNYH8YksLvlQ4e98fPc-o4ack27frPU";
-const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}&query=${"nature"}&orientation=${"portrait"}`;
+const apiKey1 = "Xlb5NbESEpRlrNYH8YksLvlQ4e98fPc-o4ack27frPU";
+const apiKey2 = "IH4MT-M7KA2QhjAGz9hzc6HufNP0KajW7H1_oVLQ980";
+const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey1 ? apiKey1 : apiKey2}&count=${count}&query=${"nature"}&orientation=${"portrait"}`;
 
 function setAttributes(element, attributes) {
   for (const key in attributes) {
@@ -31,7 +32,7 @@ function displayPhotos() {
     // nesting images inside anchor tag
     item.appendChild(img);
     // nesting anchor tag inside container
-    imageContainer.appendChild(img);
+    imageContainer.appendChild(item);
   });
 }
 
