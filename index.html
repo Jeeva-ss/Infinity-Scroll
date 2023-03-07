@@ -10,8 +10,15 @@
 	<body>
 		<!-- Title -->
 		<h1>Unsplash API - Infinite Scroll</h1>
+		<!-- Search -->
+		<div style="text-align: center">
+			<form id="formContainer" autocomplete="off">
+				<input type="text" id="queryText" required />
+				<button id="button">Search</button>
+			</form>
+		</div>
 		<!-- Loader -->
-		<div class="loader" id="loader">
+		<div class="loader" id="loader" hidden>
 			<img
 				src="https://jacintodesign.github.io/infinite-scroll/loader.svg"
 				alt="Loading"
