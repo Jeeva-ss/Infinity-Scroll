@@ -7,8 +7,8 @@ let imagesLoaded = 0;
 let photosArray = [];
 const count = 30;
 
-const apiKey = "L_o6kXmKGlReJ6txXZYJ8vLxaF73lP6KJMtCtBXPfFg";
-const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}&query=${"nature"}&orientation=${"portrait"}`;
+const apiKey = `IH4MT-M7KA2QhjAGz9hzc6HufNP0KajW7H1_oVLQ980`;
+const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}&query=${`nature || city || mountains || beach`}&orientation=${`portrait`}`;
 
 function imageLoaded() {
   imagesLoaded++;
@@ -32,7 +32,7 @@ function displayPhotos() {
     const item = document.createElement("a");
     setAttributes(item, {
       href: photo.links.html,
-      target: '_blank',
+      target: "_blank",
     });
     // 'img' tag
     const img = document.createElement("img");
@@ -41,7 +41,7 @@ function displayPhotos() {
       alt: photo.alt_description,
       title: photo.alt_description,
     });
-    img.addEventListener('load', imageLoaded);
+    img.addEventListener("load", imageLoaded);
     // nesting images inside anchor tag
     item.appendChild(img);
     // nesting anchor tag inside container
@@ -59,12 +59,12 @@ const getPhotos = async () => {
   }
 };
 
-window.addEventListener('scroll', () => {
+window.addEventListener("scroll", () => {
   if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000 && ready) {
     ready = false;
     getPhotos();
   }
-})
+});
 
 // On Load
 getPhotos();
