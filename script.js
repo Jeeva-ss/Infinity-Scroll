@@ -14,10 +14,9 @@ let apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=
 function imageLoaded() {
   imagesLoaded++;
   if (imagesLoaded === totalImages) {
+    totalImages === 5 ? count = 10 : ' ';
     ready = true;
     loader.hidden = true;
-    count = 30;
-    apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}&query=${`nature`}&orientation=${`portrait`}`;
   }
 }
 
