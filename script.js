@@ -13,7 +13,7 @@ const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&coun
 function imageLoaded() {
   imagesLoaded++;
   if (imagesLoaded === totalImages) {
-    totalImages === 3 ? count = 30 : '';
+    totalImages === 5 ? count = 30 : '';
     ready = true;
     loader.hidden = true;
   }
