@@ -12,7 +12,7 @@ let count = 30;
 
 
 // Unsplash API calls
-const apiKey = `pbEEymJJJQa6o_nImyLFOqjUHVkV8ShVn-1Y1pcCW9k`;
+const apiKey = `IH4MT-M7KA2QhjAGz9hzc6HufNP0KajW7H1_oVLQ980`;
 let apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}&query=${'nature'}&orientation=${`portrait`}`;
 
 // To check if all the photos are already
