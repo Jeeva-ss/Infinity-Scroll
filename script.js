@@ -28,7 +28,7 @@ function setAttributes(element, attributes) {
 
 function displayPhotos() {
   imagesLoaded = 0;
-  totalImages = photosArray.length;
+  totalImages += photosArray.length;
   photosArray.forEach((photo) => {
     // 'a' tag
     const item = document.createElement("a");
