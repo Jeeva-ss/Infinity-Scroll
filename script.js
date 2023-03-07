@@ -5,7 +5,7 @@ let ready = false;
 let totalImages = 0;
 let imagesLoaded = 0;
 let photosArray = [];
-const count = 5;
+let count = 5;
 
 const apiKey = `IH4MT-M7KA2QhjAGz9hzc6HufNP0KajW7H1_oVLQ980`;
 const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}&query=${`nature`}&orientation=${`portrait`}`;
