@@ -8,8 +8,9 @@ let photosArray = [];
 const count = 30;
 
 const apiKey = `IH4MT-M7KA2QhjAGz9hzc6HufNP0KajW7H1_oVLQ980`;
-const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}&query=${`nature || city || mountains || beach`}&orientation=${`portrait`}`;
+const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}&query=${`nature`}&orientation=${`portrait`}`;
 
+// check images loaded or not
 function imageLoaded() {
   imagesLoaded++;
   if (imagesLoaded === totalImages) {
@@ -18,6 +19,7 @@ function imageLoaded() {
   }
 }
 
+// helper function
 function setAttributes(element, attributes) {
   for (const key in attributes) {
     element.setAttribute(key, attributes[key]);
@@ -41,6 +43,7 @@ function displayPhotos() {
       alt: photo.alt_description,
       title: photo.alt_description,
     });
+    // on load event
     img.addEventListener("load", imageLoaded);
     // nesting images inside anchor tag
     item.appendChild(img);
@@ -60,6 +63,7 @@ const getPhotos = async () => {
   }
 };
 
+// load more on scroll
 window.addEventListener("scroll", () => {
   if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000 && ready) {
     ready = false;
