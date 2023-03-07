@@ -14,7 +14,7 @@ let apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=
 function imageLoaded() {
   imagesLoaded++;
   if (imagesLoaded === totalImages) {
-    totalImages === 5 ? count = 10 : ' ';
+  // totalImages === 5 ? count = 10 : ' ';
     ready = true;
     loader.hidden = true;
   }
@@ -30,6 +30,7 @@ function setAttributes(element, attributes) {
 function displayPhotos() {
   imagesLoaded = 0;
   totalImages = photosArray.length;
+  totalImages === 5 ? count = 10 : ' ';
   photosArray.forEach((photo) => {
     // 'a' tag
     const item = document.createElement("a");
