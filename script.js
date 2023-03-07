@@ -60,6 +60,7 @@ const getPhotos = async () => {
     displayPhotos();
   } catch (error) {
     imageContainer.innerHTML = `<h1>Comeback later...</h1>`;
+    imageContainer.classList.remove('image-container')
   }
 };
 
