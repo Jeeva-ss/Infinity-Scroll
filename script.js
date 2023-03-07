@@ -53,6 +53,7 @@ const getPhotos = async () => {
   try {
     const response = await fetch(apiUrl);
     photosArray = await response.json();
+    console.log(photosArray);
     displayPhotos();
   } catch (error) {
     imageContainer.innerHTML = `<h1>Comeback later...</h1>`;
